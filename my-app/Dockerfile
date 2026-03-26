@@ -1,12 +1,20 @@
-FROM node:18-alpine
+# Use Node.js 18
+FROM node:18
 
-WORKDIR /app
+# Create app directory
+WORKDIR /usr/src/app
 
+# Copy package.json and package-lock.json
 COPY package*.json ./
-RUN npm install
 
+# Install dependencies (with verbose for debugging)
+RUN npm install --verbose
+
+# Copy all app files
 COPY . .
 
+# Expose port
 EXPOSE 3000
 
-CMD ["npm", "start"]
+# Start the app
+CMD ["node", "app.js"]
