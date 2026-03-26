@@ -1,0 +1,37 @@
+replicaCount: 2
+
+image:
+  repository: <ECR_URI>
+  tag: latest
+
+service:
+  type: LoadBalancer
+  port: 80
+
+serviceAccount:
+  create: true
+  name: ""
+
+ingress:
+  enabled: false
+  className: ""
+  annotations: {}
+  hosts:
+    - host: chart-example.local
+      paths:
+        - path: /
+          pathType: ImplementationSpecific
+  tls: []
+
+ # helm-chart/values.yaml
+httpRoute:
+  enabled: false
+  hostnames: []
+  serviceName: my-app
+  servicePort: 80
+
+autoscaling:
+  enabled: false
+  minReplicas: 1
+  maxReplicas: 3
+  targetCPUUtilizationPercentage: 80

@@ -4,7 +4,7 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 app.get('/', (req, res) => {
-  res.send('Hello from EKS CI/CD Pipeline 🚀');
+  res.send('Hello from EKS CI/CD Pipeline 🚀 Finally We have done it');
 });
 
 app.get('/health', (req, res) => {
