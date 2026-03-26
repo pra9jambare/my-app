@@ -1,7 +1,7 @@
 {
-  "name": "eks-demo-app",
+  "name": "my-app",
   "version": "1.0.0",
-  "description": "Simple Node.js app for EKS deployment",
+  "description": "Demo Node.js app",
   "main": "app.js",
   "scripts": {
     "start": "node app.js"
